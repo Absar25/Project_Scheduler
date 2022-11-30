@@ -1,24 +1,19 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import TodoList from './components/TodoList';
+import Calender from './components/Calender';
 
 function App() {
+  const [selectDate,setSelectDate]= useState('open');
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div  className="flex-parent-element">
+      <div className = 'flex-child-element magenta'><TodoList 
+      selectDate={selectDate}/></div>
+      <div className = 'flex-child-element green'><Calender 
+      setSelectDate ={setSelectDate}/></div>
+      
     </div>
+    
   );
 }
 
